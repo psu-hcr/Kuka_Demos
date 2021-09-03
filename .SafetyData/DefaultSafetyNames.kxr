@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources xmlns="http://www.kuka.com/schemas/kxr/2009">
+   <module name="DefaultSafetyNames">
+      <message key="E_AMF_TYPE_ALWAYS_VIOLATED_Name">
+         <text xml:lang="de-DEV">Keine</text>
+         <text xml:lang="en-DEV">None</text>
+      </message>
+      <message key="E_AMF_TYPE_EMERGENCY_STOP_LOCAL_Name">
+         <text xml:lang="de-DEV">NOT-HALT smartPAD</text>
+         <text xml:lang="en-DEV">Emergency stop smartPAD</text>
+      </message>
+      <message key="E_AMF_TYPE_CONTROL_PANEL_ENABLE_Name">
+         <text xml:lang="de-DEV">Zustimmung smartPAD inaktiv</text>
+         <text xml:lang="en-DEV">Control panel enable smartPAD inactive</text>
+      </message>
+      <message key="E_AMF_TYPE_CONTROL_PANEL_PANIC_Name">
+         <text xml:lang="de-DEV">Zustimmung Panik smartPAD aktiv</text>
+         <text xml:lang="en-DEV">Control panel panic smartPAD active</text>
+      </message>
+      <message key="E_AMF_TYPE_OP_MODE_TEST_Name">
+         <text xml:lang="de-DEV">Betriebsart Test</text>
+         <text xml:lang="en-DEV">Operating mode Test</text>
+      </message>
+      <message key="E_AMF_TYPE_OP_MODE_AUT_OR_EXT_Name">
+         <text xml:lang="de-DEV">Betriebsart Automatik</text>
+         <text xml:lang="en-DEV">Operating mode Automatic</text>
+      </message>
+      <message key="E_AMF_TYPE_OP_MODE_T1_OR_KRF_Name">
+         <text xml:lang="de-DEV">Betriebsart mit reduzierter Geschwindigkeit</text>
+         <text xml:lang="en-DEV">Operating mode with reduced speed</text>
+      </message>
+      <message key="E_AMF_TYPE_OP_MODE_HIGH_SPEED_Name">
+         <text xml:lang="de-DEV">Betriebsart mit hoher Geschwindigkeit</text>
+         <text xml:lang="en-DEV">Operating mode with high speed</text>
+      </message>
+      <message key="E_AMF_TYPE_INPUT_SIGNAL_Name">
+         <text xml:lang="de-DEV">Eingangssignal</text>
+         <text xml:lang="en-DEV">Input signal</text>
+      </message>
+      <message key="E_AMF_TYPE_STANDSTILL_ALL_AXES_Name">
+         <text xml:lang="de-DEV">Stillstandsüberwachung aller Achsen</text>
+         <text xml:lang="en-DEV">Standstillmonitoring all axes</text>
+      </message>
+      <message key="E_AMF_TYPE_MOTION_ENABLE_Name">
+         <text xml:lang="de-DEV">Fahrfreigabe</text>
+         <text xml:lang="en-DEV">Motion enable</text>
+      </message>
+      <message key="E_AMF_TYPE_AXIS_TORQUE_Name">
+         <text xml:lang="de-DEV">Achsmomentenüberwachung</text>
+         <text xml:lang="en-DEV">Axis torque monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_AXIS_VELOCITY_Name">
+         <text xml:lang="de-DEV">Achsgeschwindigkeitsüberwachung</text>
+         <text xml:lang="en-DEV">Axis velocity monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_POS_REFERENCE_Name">
+         <text xml:lang="de-DEV">Positionsreferenzierung</text>
+         <text xml:lang="en-DEV">Position referencing</text>
+      </message>
+      <message key="E_AMF_TYPE_TORQUE_REFERENCE_Name">
+         <text xml:lang="de-DEV">Momentenreferenzierung</text>
+         <text xml:lang="en-DEV">Torque referencing</text>
+      </message>
+      <message key="E_AMF_TYPE_AXIS_RANGE_Name">
+         <text xml:lang="de-DEV">Achsbereichsüberwachung</text>
+         <text xml:lang="en-DEV">Axis range monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_CARTESIAN_TRANSLATIONAL_VELOCITY_Name">
+         <text xml:lang="de-DEV">Kartesische Geschwindigkeitsüberwachung</text>
+         <text xml:lang="en-DEV">Cartesian velocity monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_CART_WORKSPACE_Name">
+         <text xml:lang="de-DEV">Kartesische Arbeitsraumüberwachung</text>
+         <text xml:lang="en-DEV">Cartesian workspace monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_CART_PROTECTED_SPACE_Name">
+         <text xml:lang="de-DEV">Kartesische Schutzraumüberwachung</text>
+         <text xml:lang="en-DEV">Cartesian protected space monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_COLLISION_DETECTION_Name">
+         <text xml:lang="de-DEV">Kollisionserkennung</text>
+         <text xml:lang="en-DEV">Collision detection</text>
+      </message>
+      <message key="E_AMF_TYPE_TCP_FORCE_Name">
+         <text xml:lang="de-DEV">TCP-Kraftüberwachung</text>
+         <text xml:lang="en-DEV">TCP-force monitoring</text>
+      </message>
+      <message key="E_AMF_TYPE_HAND_GUIDING_ENABLE_Name">
+         <text xml:lang="de-DEV">Zustimmung Handführgerät inaktiv</text>
+         <text xml:lang="en-DEV">Hand guiding device inactive</text>
+      </message>
+      <message key="E_AMF_TYPE_HAND_GUIDING_ENABLE_ACTIVE_Name">
+         <text xml:lang="de-DEV">Zustimmung Handführgerät aktiv</text>
+         <text xml:lang="en-DEV">Hand guiding device active</text>
+      </message>
+      <message key="E_AMF_TYPE_DELAY_Name">
+         <text xml:lang="de-DEV">Zeitverzögerung</text>
+         <text xml:lang="en-DEV">Delay</text>
+      </message>
+      <message key="E_AMF_TYPE_TOOL_ORIENTATION_Name">
+         <text xml:lang="de-DEV">Werkzeugorientierung</text>
+         <text xml:lang="en-DEV">Tool orientation</text>
+      </message>
+      <message key="E_AMF_TYPE_TOOL_RELATED_VELOCITY_COMPONENT_Name">
+         <text xml:lang="de-DEV">Werkzeugbezogene Geschwindigkeitskomponente</text>
+         <text xml:lang="en-DEV">Tool related velocity component</text>
+      </message>
+      <message key="E_AMF_TYPE_BASE_RELATED_TCP_FORCE_COMPONENT_Name">
+         <text xml:lang="de-DEV">Basisbezogene TCP-Kraftkomponente</text>
+         <text xml:lang="en-DEV">Base related TCP-force component</text>
+      </message>
+      <message key="E_KUKA_AMF_INSTANCE_Name">
+         <text xml:lang="de-DEV">Instanz</text>
+         <text xml:lang="en-DEV">Instance</text>
+      </message>
+      <message key="E_MSG_KUKA_PSM_ROW_VIOLATION">
+         <text xml:lang="de-DEV">KUKA PSM Tabelle, Zeile _ROW_NR_:</text>
+         <text xml:lang="en-DEV">KUKA PSM table, row _ROW_NR_:</text>
+      </message>
+      <message key="E_MSG_USER_PSM_ROW_VIOLATION">
+         <text xml:lang="de-DEV">Anwender PSM Tabelle, Zeile _ROW_NR_:</text>
+         <text xml:lang="en-DEV">User PSM table, row _ROW_NR_:</text>
+      </message>
+      <message key="E_MSG_ESM_STATE_VIOLATION">
+         <text xml:lang="de-DEV">ESM Zustand _STATE_NR_:</text>
+         <text xml:lang="en-DEV">ESM state _STATE_NR_:</text>
+      </message>
+   </module>
+</resources>
