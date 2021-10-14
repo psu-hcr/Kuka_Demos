@@ -5,8 +5,6 @@
 2. Click on the Ethernet hyperlink under the unidentifies ethernet network and select Properties
 3. Under properties, select IPv4.
 4. In the menu that pops up, manually enter the IP address as 172.31.1.42 and mask as 255.255.0.0
-```
-apt-get update
 
 ```
 If you go to the website `http://127.0.0.1:4000` in your browser, you will see a local version of the site.    
