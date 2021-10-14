@@ -1,7 +1,10 @@
-### To edit the website
-#### Step 0: Clone repo and install necessary packages
+### To run this demo on the Kuka LBR IIWA 14 820
+#### Step 0: Install, Sunrise Workbench on your machine, clone this repo and install necessary packages
 *Note: this is only done once.*   
-1. On your local machine, use the terminal to navigate to wherever you want to store your local version of the website. Then:
+1. Set up the ethernet connection with the X66 ethernet port on the Sunrise Cabinet by going to Control Panel ->Network and Internet > Network and Sharing Center
+2. Click on the Ethernet hyperlink under the unidentifies ethernet network and select Properties
+3. Under properties, select IPv4.
+4. In the menu that pops up, manually enter the IP address as 172.31.1.42 and mask as 255.255.0.0
 ```
 apt-get update
 apt-get upgrade
