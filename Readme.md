@@ -7,26 +7,7 @@
 4. In the menu that pops up, manually enter the IP address as 172.31.1.42 and mask as 255.255.0.0
 ```
 apt-get update
-apt-get upgrade
-git clone https://github.com/MurpheyLab/MurpheyLab.github.io
-```
-This will update and upgrade your system, and then create a new folder on your device containing the latest version of the website. The new folder will be named `MurpheyLab.github.io`.   
 
-2. Next, navigate to this new folder and install `bundler`
-```
-cd ~/MurpheyLab.github.io
-sudo gem install bundler
-bundle install
-```
-3. If you get an error "while installing commonmarker" you might need to install additional libraries (zlib and ruby-dev) and then attempt bundle installation again. For MAC users, visit https://sourabhbajaj.com/mac-setup/Ruby/README.html and follow the steps there. If you did not get any errors, skip this part.
- ```
-sudo apt install zlib1g
-sudo apt install ruby-dev
-bundle install
-```  
-4. Now you can create a local version of the website:
-```
-bundle exec jekyll serve
 ```
 If you go to the website `http://127.0.0.1:4000` in your browser, you will see a local version of the site.    
 
