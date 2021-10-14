@@ -9,6 +9,7 @@ import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
 import com.kuka.roboticsAPI.deviceModel.LBR;
+import com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy;
 import com.kuka.roboticsAPI.geometricModel.Frame;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
@@ -37,13 +38,15 @@ public class JustForFun extends RoboticsAPIApplication {
 	private LBR robot;
 	@Inject 
 	private ITaskLogger logger;
-	public Frame Point1= new Frame(329.3,-92.9,1143.7,-1.8,.8,.2);
+	Frame Point1= new Frame(329.3,-92.9,1143.7,-1.8,.8,.2);
+	LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
+	
 
 	
 	@Override
 	public void initialize() {
 		// initialize your application here
-		
+		Point1.setRedundancyInformation(robot,Redundancy);
 	}
 
 	@Override
