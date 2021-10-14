@@ -5,12 +5,6 @@
 2. Click on the Ethernet hyperlink under the unidentifies ethernet network and select Properties
 3. Under properties, select IPv4.
 4. In the menu that pops up, manually enter the IP address as 172.31.1.42 and mask as 255.255.0.0
-```
-apt-get update
-apt-get upgrade
-git clone https://github.com/MurpheyLab/MurpheyLab.github.io
-```
-This will update and upgrade your system, and then create a new folder on your device containing the latest version of the website. The new folder will be named `MurpheyLab.github.io`.   
 
 2. Next, navigate to this new folder and install `bundler`
 ```
