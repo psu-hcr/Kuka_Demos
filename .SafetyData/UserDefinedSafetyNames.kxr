@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<resources xmlns="http://www.kuka.com/schemas/kxr/2009">
-   <module name="UserDefinedSafetyNames"/>
-</resources>
