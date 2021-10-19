@@ -22,7 +22,7 @@
 ### Step 2: On the Kuka smartHMI tablet, ensure the the safety configuration is activated but selecting Station->Safety->Activation.
  
 ### Step 3: Select the application and press the green arrow to enable. Then choose from the programmed motions.
-*Note: 'Dance' currently generates an error.*
+*Note: 'Dance' currently generates an error. Run MechanicalZeroPosition to resolve error.*
 
 ###Saving frames from the Kuka
 ####Step 1: Save Points on Smart Pad
@@ -36,5 +36,7 @@
 3. Give it a name, and select settings for the specific robot setup. (e.g. LBR iiwa 14 R820 / Medien-Flansch Touch-Elektrisch)
 4. Select the RoboticsAPI Application and give your application a unique name.
 5. We suggest copying a safetyconfig from an existing project such as the one in this repository.
+6. It is helful to have a couple of the application examples in your project for correcting errors. You can add this by selecting Files->New->Sunrise application.
+7. Under Application Examples>LBR iiwa, add PositionAndGMSReferencing. Follow the same process to add MechanicalZeroPosition.
 
 
