@@ -25,9 +25,29 @@
 *Note: 'Dance' currently generates an error. Run MechanicalZeroPosition to resolve error.*
 
 ###Saving frames from the Kuka
-####Step 1: Save Points on Smart Pad
-####Step 1: Synchronize
+
+#### Step 1: Ensure that your project is loaded on the Kuka by clicking the Synchronize icon, selecting Deploy to project, and Execute.
+
+####Step 2: Save Points on Smart Pad
+
+1. On the smartHMI, select Station>Frames.
+2. Jog the robot to the desired position using the `+` and `-` controls of each joint.
+3. On the bottom of the screen, select the icon with the axes graphic and the `+` symbol to add the frame to the list of saved frames.
+4. You will have to enter the pass word `argus` under the `Safety Maintenance Technician` user profile, and it will add the current pose of the robot as P1.
+5. You can repeat this for all of the end points that you would like to save.
+####Step 3: Synchronize
+
+1. Open the your project in the Sunrise Workbench. Click the Synchronize icon.
+2. Select Load to Local project and execute.
+3. You will see the list of saved frames, P1, P2 etc in the list of frames under Application on the right side of Workbench.
+4. The frames are saved in `YourProjectFolder/src/RoboticsAPI.data.xml.`
 ####Step 3: Hardcode frame data
+
+We have had issues in the past with the frame data in `YourProjectFolder/src/RoboticsAPI.data.xml.` being lost, so you can also hardcode the frame data.
+To manually add a frame, add the following lines of code to your java application inside the class definition.
+`Frame Point1= new Frame(x,y,z,A,B,C);`
+The x,y,z position and A,B,C orientation can be pulled from the properties of the frames saved in the P1, P2, P3 ... list.
+*Note that this step will require you to import com.kuka.geometry.frame in your Java application.*
 
 ###Set up a new project
 
