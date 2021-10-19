@@ -22,7 +22,7 @@
 ### Step 2: On the Kuka smartHMI tablet, ensure the the safety configuration is activated but selecting Station->Safety->Activation.
  
 ### Step 3: Select the application and press the green arrow to enable. Then choose from the programmed motions.
-
+*Note: 'Dance' currently generates an error.*
 
 ###Saving frames from the Kuka
 ####Step 1: Save Points on Smart Pad
