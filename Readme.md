@@ -38,5 +38,3 @@
 5. We suggest copying a safetyconfig from an existing project such as the one in this repository.
 6. It is helful to have a couple of the application examples in your project for correcting errors. You can add this by selecting Files->New->Sunrise application.
 7. Under Application Examples>LBR iiwa, add PositionAndGMSReferencing. Follow the same process to add MechanicalZeroPosition.
-
-
