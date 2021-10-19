@@ -19,16 +19,16 @@
 2. Select Deploy to Project and execute.
 3. You will be asked to select a user and enter a password. Switch to user Safety Maintenance technician and enter `argus` as the password.
 
-### Step 2: On the Kuka smartHMI tablet, ensure the the safety configuration is activated but selecting Station->Safety->Activation.
+#### Step 2: On the Kuka smartHMI tablet, ensure the the safety configuration is activated but selecting Station->Safety->Activation.
  
-### Step 3: Select the application and press the green arrow to enable. Then choose from the programmed motions.
+#### Step 3: Select the application and press the green arrow to enable. Then choose from the programmed motions.
 *Note: 'Dance' currently generates an error. Run MechanicalZeroPosition to resolve error.*
 
-###Saving frames from the Kuka
+### Saving frames from the Kuka
 
 #### Step 1: Ensure that your project is loaded on the Kuka by clicking the Synchronize icon, selecting Deploy to project, and Execute.
 
-####Step 2: Save Points on Smart Pad
+###Step 2: Save Points on Smart Pad
 
 1. On the smartHMI, select Station>Frames.
 2. Jog the robot to the desired position using the `+` and `-` controls of each joint.
