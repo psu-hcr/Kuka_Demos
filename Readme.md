@@ -58,3 +58,9 @@ The x,y,z position and A,B,C orientation can be pulled from the properties of th
 5. We suggest copying a safetyconfig from an existing project such as the one in this repository.
 6. It is helful to have a couple of the application examples in your project for correcting errors. You can add this by selecting Files->New->Sunrise application.
 7. Under Application Examples>LBR iiwa, add PositionAndGMSReferencing. Follow the same process to add MechanicalZeroPosition.
+
+### Set up a new application inside a project
+
+1. Go to File -> New -> Sunrise Application
+2. Select an application template
+3. Give a name to the new application
