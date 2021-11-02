@@ -74,7 +74,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		}
 		MotionBatch mb = new MotionBatch(ptp(Points[0])).setBlendingRel(0.1).setJointVelocityRel(0.5);
 	
-		for(int i =10;i<time;i++)
+		for(int i =0;i<time;i++)
 		{
 			mb.getMotions().add(ptp(Points[i]).setBlendingRel(0.1).setJointVelocityRel(0.5));
 		
