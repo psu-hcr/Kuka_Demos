@@ -63,7 +63,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		robot.move(ptpHome());
-		int time = 24;
+		int time = 24*5;
 		double x = 0;
 		double y = 0;
 		double z = 0;
