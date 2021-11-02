@@ -7,6 +7,7 @@ import com.kuka.common.ThreadUtil;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
+import com.kuka.roboticsAPI.deviceModel.JointPosition;
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy;
 import com.kuka.roboticsAPI.geometricModel.Frame;
@@ -46,6 +47,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	private LBR robot;
 	Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
 	LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
+	JointPosition FUCKYOU;
 	@Override
 	public void initialize() {
 		TestPoint.setRedundancyInformation(robot,Redundancy);
@@ -71,8 +73,8 @@ public class Figure8 extends RoboticsAPIApplication {
 		}
 		robot.move(ptpHome());
 		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
-		robot.move(ptp(TestPoint).setJointVelocityRel(0.65));//moves to point 6
-		robot.move(ptp(TestPoint).setJointVelocityRel(0.65));
+		FUCKYOU= robot.getInverseKinematicFromFrameAndRedundancy(TestPoint);
+		robot.move(ptp(FUCKYOU));
 	
 		for(int i =0;i<time;i++)
 		{
