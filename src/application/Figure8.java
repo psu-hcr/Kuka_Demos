@@ -58,6 +58,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		double x = 0;
 		double y = 0;
 		double z = 0;
+		LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
 		Frame[] Points= new Frame [5000];
 		for(double i =0;i<time;i++)
 		{
@@ -70,6 +71,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		robot.move(ptpHome());
 		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
 		Frame TestPoint=new Frame(200,200,700,0,0,0);
+		TestPoint.setRedundancyInformation(robot,Redundancy);
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
