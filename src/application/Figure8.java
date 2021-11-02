@@ -68,8 +68,8 @@ public class Figure8 extends RoboticsAPIApplication {
 			Points[(int)i]=Point;
 		}
 		robot.move(ptpHome());
-		robot.move(ptp(.1,.1,.1,.1,.1,.1,.1));
-		Frame TestPoint=new Frame(200,50,700,0,0,0);
+		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
+		Frame TestPoint=new Frame(200,200,700,0,0,0);
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
