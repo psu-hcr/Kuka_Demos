@@ -61,7 +61,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		robot.move(ptpHome());
-		int time = 25;
+		int time = 10;
 		double x = 0;
 		double y = 0;
 		double z = 0;
@@ -71,7 +71,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		for(double i =0;i<time;i++)
 		{
 			x=600;
-			y=250*java.lang.Math.cos((2*i)/5);
+			y=250*java.lang.Math.cos((2*i)/4);
 			z=100*java.lang.Math.sin((4*i)/2)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
@@ -87,21 +87,7 @@ public class Figure8 extends RoboticsAPIApplication {
 				(ptp(Points[7]).setBlendingCart(20)),
 				(ptp(Points[8]).setBlendingCart(20)),
 				(ptp(Points[9]).setBlendingCart(20)),
-				(ptp(Points[10]).setBlendingCart(20)),
-				(ptp(Points[11]).setBlendingCart(20)),
-				(ptp(Points[12]).setBlendingCart(20)),
-				(ptp(Points[13]).setBlendingCart(20)),
-				(ptp(Points[14]).setBlendingCart(20)),
-				(ptp(Points[15]).setBlendingCart(20)),
-				(ptp(Points[16]).setBlendingCart(20)),
-				(ptp(Points[17]).setBlendingCart(20)),
-				(ptp(Points[18]).setBlendingCart(20)),
-				(ptp(Points[19]).setBlendingCart(20)),
-				(ptp(Points[20]).setBlendingCart(20)),
-				(ptp(Points[21]).setBlendingCart(20)),
-				(ptp(Points[22]).setBlendingCart(20)),
-				(ptp(Points[23]).setBlendingCart(20)),
-				(ptp(Points[24]).setBlendingCart(20)));
+				(ptp(Points[10]).setBlendingCart(20)));
 	
 		
 		
