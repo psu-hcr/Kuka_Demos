@@ -43,7 +43,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	
 	
 	@Inject
-	private LBR lBR_iiwa_14_R820_1;
+	private LBR robot;
 
 	@Override
 	public void initialize() {
@@ -67,13 +67,13 @@ public class Figure8 extends RoboticsAPIApplication {
 			Frame Point= new Frame(x,y,z,0,0,0);
 			Points[(int)i]=Point;
 		}
-		lBR_iiwa_14_R820_1.move(ptpHome());
+		robot.move(ptpHome());
 		Frame TestPoint=new Frame(100,100,400,0,90,0);
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
 		}
-		ptp(TestPoint);
+		robot.move(ptp(TestPoint));
 		ptp(Math.PI/2,Math.PI/2,0,Math.PI/2,-Math.PI/2,0,0);
 	}
 }
