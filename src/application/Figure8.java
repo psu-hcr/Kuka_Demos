@@ -65,9 +65,9 @@ public class Figure8 extends RoboticsAPIApplication {
 		Frame[] Points= new Frame [time];
 		for(double i =0;i<time;i++)
 		{
-			x=700;
+			x=600;
 			y=250*java.lang.Math.cos((2*i)/10);
-			z=250*java.lang.Math.sin((4*i)/10)+800;
+			z=250*java.lang.Math.sin((4*i)/10)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
 		}
