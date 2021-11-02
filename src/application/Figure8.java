@@ -87,7 +87,7 @@ public class Figure8 extends RoboticsAPIApplication {
 				(ptp(Points[7]).setBlendingCart(20)),
 				(ptp(Points[8]).setBlendingCart(20)),
 				(ptp(Points[9]).setBlendingCart(20)),
-				(ptp(Points[10]).setBlendingCart(20)));
+				(ptp(Points[9]).setBlendingCart(20)));
 	
 		
 		
