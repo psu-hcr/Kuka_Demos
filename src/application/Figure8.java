@@ -81,7 +81,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	
 		for(int i =0;i<time;i++)
 		{
-			robot.moveAsync(lin(Points[i]).setBlendingRel(0.1));
+			robot.moveAsync(ptp(Points[i]).setBlendingRel(1));
 		
 			
 		}
