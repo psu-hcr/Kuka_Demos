@@ -67,26 +67,25 @@ public class Figure8 extends RoboticsAPIApplication {
 		double z = 0;
 	
 		Frame[] Points= new Frame [time];
-		CartesianPTP[] Motions= new CartesianPTP [time];
-		 
+		
 		for(double i =0;i<time;i++)
 		{
 			x=600;
 			y=250*java.lang.Math.cos((2*i)/50);
 			z=100*java.lang.Math.sin((4*i)/50)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
-			//Points[(int)i]=Point;
-			Motions[(int)i]=ptp(Point);
+			Points[(int)i]=Point;
+			
 		}
-		MotionBatch mb = new MotionBatch(Motions).setBlendingRel(0.1).setJointVelocityRel(0.5);
+		
 	
 		for(int i =0;i<time;i++)
 		{
-			mb.getMotions().add(ptp(Points[i]).setBlendingRel(0.1).setJointVelocityRel(0.5));
+			robot.moveAsync(lin(Points[i]).setBlendingRel(0.1));
 		
 			
 		}
-		robot.move(mb);
+		
 		
 	}
 }
