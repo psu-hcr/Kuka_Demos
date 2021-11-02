@@ -13,7 +13,9 @@ import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy;
 import com.kuka.roboticsAPI.geometricModel.Frame;
 import com.kuka.roboticsAPI.motionModel.CartesianPTP;
+import com.kuka.roboticsAPI.motionModel.Motion;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
+import com.kuka.roboticsAPI.motionModel.RobotMotion;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 import com.kuka.task.ITaskLogger;
 import javax.inject.Inject;
@@ -67,26 +69,18 @@ public class Figure8 extends RoboticsAPIApplication {
 		double z = 0;
 	
 		Frame[] Points= new Frame [time];
-		
+		Motion[] mot = new Motion [time];
 		for(double i =0;i<time;i++)
 		{
 			x=600;
 			y=250*java.lang.Math.cos((2*i)/2);
 			z=100*java.lang.Math.sin((4*i)/2)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
-			Points[(int)i]=Point;
+			mot[(int)i]= ptp(Point).setBlendingCart(20);
+			
 			
 		}
-		MotionBatch mb =new MotionBatch((ptp(Points[0]).setBlendingCart(20)),
-				(ptp(Points[1]).setBlendingCart(20)),
-				(ptp(Points[2]).setBlendingCart(20)),
-				(ptp(Points[3]).setBlendingCart(20)),
-				(ptp(Points[4]).setBlendingCart(20)),
-				(ptp(Points[5]).setBlendingCart(20)),
-				(ptp(Points[6]).setBlendingCart(20)),
-				(ptp(Points[7]).setBlendingCart(20)),
-				(ptp(Points[8]).setBlendingCart(20)),
-				(ptp(Points[9]).setBlendingCart(20)));
+		MotionBatch mb =new MotionBatch((RobotMotion<?>[]) mot);
 	
 		for(int i =0;i<=2;i++)
 		{
