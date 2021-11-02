@@ -58,7 +58,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		robot.move(ptpHome());
-		int time = 500;
+		int time = 100;
 		double x = 0;
 		double y = 0;
 		double z = 0;
@@ -67,8 +67,8 @@ public class Figure8 extends RoboticsAPIApplication {
 		for(double i =0;i<time;i++)
 		{
 			x=600;
-			y=250*java.lang.Math.cos((2*i)/100);
-			z=100*java.lang.Math.sin((4*i)/100)+700;
+			y=250*java.lang.Math.cos((2*i)/50);
+			z=100*java.lang.Math.sin((4*i)/50)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
 		}
