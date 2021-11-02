@@ -57,6 +57,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
+		robot.move(ptpHome());
 		int time = 50;
 		double x = 0;
 		double y = 0;
