@@ -74,5 +74,6 @@ public class Figure8 extends RoboticsAPIApplication {
 			ptp(Points[i]);
 		}
 		ptp(TestPoint);
+		ptp(Math.PI/2,Math.PI/2,0,Math.PI/2,-Math.PI/2,0,0);
 	}
 }
