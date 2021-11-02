@@ -70,13 +70,13 @@ public class Figure8 extends RoboticsAPIApplication {
 		}
 		robot.move(ptpHome());
 		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
-		Frame TestPoint=new Frame(200,200,700,0,0,0);
-		TestPoint.setRedundancyInformation(robot,Redundancy);
+		Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
+	
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
 		}
-		robot.move(lin(TestPoint));
+		robot.move(ptp(TestPoint));
 		ptp(Math.PI/2,Math.PI/2,0,Math.PI/2,-Math.PI/2,0,0);
 	}
 }
