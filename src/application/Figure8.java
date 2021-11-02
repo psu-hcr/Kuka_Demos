@@ -58,7 +58,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		robot.move(ptpHome());
-		int time = 100;
+		int time = 200;
 		double x = 0;
 		double y = 0;
 		double z = 0;
@@ -76,7 +76,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	
 		for(int i =0;i<time;i++)
 		{
-			robot.moveAsync(ptp(Points[i]).setBlendingCart(50));
+			robot.moveAsync(ptp(Points[i]).setBlendingCart(100));
 			
 		}
 		
