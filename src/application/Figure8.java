@@ -76,7 +76,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	
 		for(int i =0;i<time;i++)
 		{
-			robot.moveAsync(ptp(Points[i]).setBlendingCart(100));
+			robot.moveAsync(ptp(Points[i]).setBlendingCart(1));
 			
 		}
 		
