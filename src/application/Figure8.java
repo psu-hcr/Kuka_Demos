@@ -56,9 +56,11 @@ public class Figure8 extends RoboticsAPIApplication {
 			Points[(int)i]=Point;
 		}
 		lBR_iiwa_14_R820_1.move(ptpHome());
+		Frame TestPoint=new Frame(100,100,400,0,0,0);
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
 		}
+		ptp(TestPoint);
 	}
 }
