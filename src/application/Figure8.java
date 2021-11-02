@@ -74,9 +74,13 @@ public class Figure8 extends RoboticsAPIApplication {
 		}
 		
 	
-		for(int i =0;i<time;i++)
+		for(int i =0;i<time;i+=5)
 		{
 			robot.moveAsync(ptp(Points[i]));
+			robot.moveAsync(ptp(Points[i+1]));
+			robot.moveAsync(ptp(Points[i+2]));
+			robot.moveAsync(ptp(Points[i+3]));
+			robot.moveAsync(ptp(Points[i+4]));
 		}
 		
 		
