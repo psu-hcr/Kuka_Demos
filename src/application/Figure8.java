@@ -72,14 +72,15 @@ public class Figure8 extends RoboticsAPIApplication {
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
 		}
-		
+		MotionBatch mb = new MotionBatch();
 	
 		for(int i =0;i<time;i++)
 		{
-			robot.moveAsync(ptp(Points[i]).setBlendingCart(1));
+			mb.getMotions().add(ptp(Points[i]).setBlendingRel(1));
+		
 			
 		}
-		
+		robot.move(mb);
 		
 	}
 }
