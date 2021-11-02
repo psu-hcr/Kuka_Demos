@@ -35,6 +35,13 @@ public class Figure8 extends RoboticsAPIApplication {
 
 	@Override
 	public void initialize() {
+		
+		
+	}
+
+	@Override
+	public void run() {
+		// your application execution starts here
 		int time = 5000;
 		double x = 0;
 		double y = 0;
@@ -48,15 +55,10 @@ public class Figure8 extends RoboticsAPIApplication {
 			Frame Point= new Frame(x,y,z,0,0,0);
 			Points[(int)i]=Point;
 		}
+		lBR_iiwa_14_R820_1.move(ptpHome());
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
 		}
-	}
-
-	@Override
-	public void run() {
-		// your application execution starts here
-		lBR_iiwa_14_R820_1.move(ptpHome());
 	}
 }
