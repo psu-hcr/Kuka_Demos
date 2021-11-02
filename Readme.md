@@ -19,22 +19,48 @@
 2. Select Deploy to Project and execute.
 3. You will be asked to select a user and enter a password. Switch to user Safety Maintenance technician and enter `argus` as the password.
 
-### Step 2: On the Kuka smartHMI tablet, ensure the the safety configuration is activated but selecting Station->Safety->Activation.
+#### Step 2: On the Kuka smartHMI tablet, ensure the the safety configuration is activated but selecting Station->Safety->Activation.
  
-### Step 3: Select the application and press the green arrow to enable. Then choose from the programmed motions.
-*Note: 'Dance' currently generates an error.*
+#### Step 3: Select the application and press the green arrow to enable. Then choose from the programmed motions.
+*Note: 'Dance' currently generates an error. Run MechanicalZeroPosition to resolve error.*
 
-###Saving frames from the Kuka
-####Step 1: Save Points on Smart Pad
-####Step 1: Synchronize
-####Step 3: Hardcode frame data
+### Saving frames from the Kuka
 
-###Set up a new project
+#### Step 1: Ensure that your project is loaded on the Kuka by clicking the Synchronize icon, selecting Deploy to project, and Execute.
+
+### Step 2: Save Points on Smart Pad
+
+1. On the smartHMI, select Station>Frames.
+2. Jog the robot to the desired position using the `+` and `-` controls of each joint.
+3. On the bottom of the screen, select the icon with the axes graphic and the `+` symbol to add the frame to the list of saved frames.
+4. You will have to enter the pass word `argus` under the `Safety Maintenance Technician` user profile, and it will add the current pose of the robot as P1.
+5. You can repeat this for all of the end points that you would like to save.
+####Step 3: Synchronize
+
+1. Open the your project in the Sunrise Workbench. Click the Synchronize icon.
+2. Select Load to Local project and execute.
+3. You will see the list of saved frames, P1, P2 etc in the list of frames under Application on the right side of Workbench.
+4. The frames are saved in `YourProjectFolder/src/RoboticsAPI.data.xml.`
+#### Step 4: Hardcode frame data
+
+We have had issues in the past with the frame data in `YourProjectFolder/src/RoboticsAPI.data.xml.` being lost, so you can also hardcode the frame data.
+To manually add a frame, add the following lines of code to your java application inside the class definition.
+`Frame Point1= new Frame(x,y,z,A,B,C);`
+The x,y,z position and A,B,C orientation can be pulled from the properties of the frames saved in the P1, P2, P3 ... list.
+*Note that this step will require you to import com.kuka.geometry.frame in your Java application.*
+
+### Set up a new project
 
 1. File->New->Sunrise Project
 2. Use the default IP address of controller: 172.31.1.147
 3. Give it a name, and select settings for the specific robot setup. (e.g. LBR iiwa 14 R820 / Medien-Flansch Touch-Elektrisch)
 4. Select the RoboticsAPI Application and give your application a unique name.
 5. We suggest copying a safetyconfig from an existing project such as the one in this repository.
+6. It is helful to have a couple of the application examples in your project for correcting errors. You can add this by selecting Files->New->Sunrise application.
+7. Under Application Examples>LBR iiwa, add PositionAndGMSReferencing. Follow the same process to add MechanicalZeroPosition.
 
+### Set up a new application inside a project
 
+1. Go to File -> New -> Sunrise Application
+2. Select an application template
+3. Give a name to the new application
