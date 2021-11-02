@@ -47,7 +47,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	private LBR robot;
 	Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
 	LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
-	JointPosition FUCKYOU;
+	JointPosition j;
 	@Override
 	public void initialize() {
 		TestPoint.setRedundancyInformation(robot,Redundancy);
@@ -71,14 +71,11 @@ public class Figure8 extends RoboticsAPIApplication {
 			Frame Point= new Frame(x,y,z,0,0,0);
 			Points[(int)i]=Point;
 		}
-		robot.move(ptpHome());
-		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
-		FUCKYOU= robot.getInverseKinematicFromFrameAndRedundancy(TestPoint);
-		robot.move(ptp(FUCKYOU));
+		
 	
 		for(int i =0;i<time;i++)
 		{
-			ptp(Points[i]);
+			robot.move(ptp(Points[i]));
 		}
 		
 		ptp(Math.PI/2,Math.PI/2,0,Math.PI/2,-Math.PI/2,0,0);
