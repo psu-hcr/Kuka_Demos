@@ -71,7 +71,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		for(double i =0;i<time;i++)
 		{
 			x=600;
-			y=250*java.lang.Math.cos((2*i)/4);
+			y=250*java.lang.Math.cos((2*i)/2);
 			z=100*java.lang.Math.sin((4*i)/2)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
@@ -86,15 +86,14 @@ public class Figure8 extends RoboticsAPIApplication {
 				(ptp(Points[6]).setBlendingCart(20)),
 				(ptp(Points[7]).setBlendingCart(20)),
 				(ptp(Points[8]).setBlendingCart(20)),
-				(ptp(Points[9]).setBlendingCart(20)),
 				(ptp(Points[9]).setBlendingCart(20)));
 	
-		
-		
-			robot.moveAsync(mb);
+		for(int i =0;i<2;i++)
+		{
+			robot.moveAsync(ptp(Points[i]).setBlendingCart(20));
 		
 			
-		
+		}
 		
 		
 	}
