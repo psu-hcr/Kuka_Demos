@@ -44,10 +44,11 @@ public class Figure8 extends RoboticsAPIApplication {
 	
 	@Inject
 	private LBR robot;
-
+	Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
+	LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
 	@Override
 	public void initialize() {
-		
+		TestPoint.setRedundancyInformation(robot,Redundancy);
 		
 	}
 
@@ -58,7 +59,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		double x = 0;
 		double y = 0;
 		double z = 0;
-		LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
+	
 		Frame[] Points= new Frame [5000];
 		for(double i =0;i<time;i++)
 		{
@@ -70,14 +71,14 @@ public class Figure8 extends RoboticsAPIApplication {
 		}
 		robot.move(ptpHome());
 		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
-		Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
-		TestPoint.setRedundancyInformation(robot,Redundancy);
+		robot.move(ptp(TestPoint).setJointVelocityRel(0.65));//moves to point 6
+		robot.move(ptp(TestPoint).setJointVelocityRel(0.65));
 	
 		for(int i =0;i<time;i++)
 		{
 			ptp(Points[i]);
 		}
-		robot.move(ptp(TestPoint).setJointVelocityRel(0.65));
+		
 		ptp(Math.PI/2,Math.PI/2,0,Math.PI/2,-Math.PI/2,0,0);
 	}
 }
