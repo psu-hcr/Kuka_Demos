@@ -61,7 +61,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		robot.move(ptpHome());
-		int time = 200;
+		int time = 10;
 		double x = 0;
 		double y = 0;
 		double z = 0;
@@ -71,17 +71,26 @@ public class Figure8 extends RoboticsAPIApplication {
 		for(double i =0;i<time;i++)
 		{
 			x=600;
-			y=250*java.lang.Math.cos((2*i)/50);
-			z=100*java.lang.Math.sin((4*i)/50)+700;
+			y=250*java.lang.Math.cos((2*i)/2);
+			z=100*java.lang.Math.sin((4*i)/2)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
 			
 		}
-		
+		MotionBatch mb =new MotionBatch((ptp(Points[0]).setBlendingCart(20)),
+				(ptp(Points[1]).setBlendingCart(20)),
+				(ptp(Points[2]).setBlendingCart(20)),
+				(ptp(Points[3]).setBlendingCart(20)),
+				(ptp(Points[4]).setBlendingCart(20)),
+				(ptp(Points[5]).setBlendingCart(20)),
+				(ptp(Points[6]).setBlendingCart(20)),
+				(ptp(Points[7]).setBlendingCart(20)),
+				(ptp(Points[8]).setBlendingCart(20)),
+				(ptp(Points[9]).setBlendingCart(20)));
 	
 		for(int i =0;i<time;i++)
 		{
-			robot.moveAsync(ptp(Points[i]).setBlendingCart(20));
+			robot.moveAsync(mb);
 		
 			
 		}
