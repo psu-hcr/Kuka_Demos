@@ -67,7 +67,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		{
 			x=600;
 			y=250*java.lang.Math.cos((2*i)/10);
-			z=250*java.lang.Math.sin((4*i)/10)+700;
+			z=100*java.lang.Math.sin((4*i)/10)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
 			Points[(int)i]=Point;
 		}
