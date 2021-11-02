@@ -76,18 +76,18 @@ public class Figure8 extends RoboticsAPIApplication {
 			y=250*java.lang.Math.cos((2*i)/5);
 			z=100*java.lang.Math.sin((4*i)/5)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
-			mot[(int)i]= ptp(Point).setBlendingCart(20);
+			mot[(int)i]= ptp(Point).setBlendingCart(20).setJointVelocityRel(0.4);
 			
 			
 		}
 		MotionBatch mb =new MotionBatch(mot);
 	
-		for(int i =0;i<=2;i++)
-		{
+		//for(int i =0;i<=2;i++)
+		//{
 			robot.moveAsync(mb);
 		
 			
-		}
+		//}
 		
 		
 	}
