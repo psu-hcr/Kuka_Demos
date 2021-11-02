@@ -4,6 +4,7 @@ package application;
 
 import com.kuka.common.ThreadUtil;
 
+import com.kuka.motion.IMotion;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
@@ -11,6 +12,7 @@ import com.kuka.roboticsAPI.deviceModel.JointPosition;
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy;
 import com.kuka.roboticsAPI.geometricModel.Frame;
+import com.kuka.roboticsAPI.motionModel.CartesianPTP;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 import com.kuka.task.ITaskLogger;
@@ -20,6 +22,7 @@ import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.geometricModel.Frame;
+import com.kuka.roboticsAPI.geometricModel.math.Vector;
 
 /**
  * Implementation of a robot application.
@@ -47,7 +50,7 @@ public class Figure8 extends RoboticsAPIApplication {
 	private LBR robot;
 	Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
 	LBRE1Redundancy Redundancy = new LBRE1Redundancy().setE1(0.003);
-	JointPosition j;
+	
 	@Override
 	public void initialize() {
 		TestPoint.setRedundancyInformation(robot,Redundancy);
@@ -64,15 +67,18 @@ public class Figure8 extends RoboticsAPIApplication {
 		double z = 0;
 	
 		Frame[] Points= new Frame [time];
+		CartesianPTP[] Motions= new CartesianPTP [time];
+		 
 		for(double i =0;i<time;i++)
 		{
 			x=600;
 			y=250*java.lang.Math.cos((2*i)/50);
 			z=100*java.lang.Math.sin((4*i)/50)+700;
 			Frame Point= new Frame(x,y,z,0,Math.PI/2,0);
-			Points[(int)i]=Point;
+			//Points[(int)i]=Point;
+			Motions[(int)i]=ptp(Point);
 		}
-		MotionBatch mb = new MotionBatch(ptp(Points[0])).setBlendingRel(0.1).setJointVelocityRel(0.5);
+		MotionBatch mb = new MotionBatch(Motions).setBlendingRel(0.1).setJointVelocityRel(0.5);
 	
 		for(int i =0;i<time;i++)
 		{
