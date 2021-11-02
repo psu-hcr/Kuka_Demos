@@ -69,7 +69,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		double z = 0;
 	
 		Frame[] Points= new Frame [time];
-		Motion[] mot = new Motion [time];
+		RobotMotion<?>[] mot = new RobotMotion<?> [time];
 		for(double i =0;i<time;i++)
 		{
 			x=600;
@@ -80,7 +80,7 @@ public class Figure8 extends RoboticsAPIApplication {
 			
 			
 		}
-		MotionBatch mb =new MotionBatch((RobotMotion<?>[]) mot);
+		MotionBatch mb =new MotionBatch(mot);
 	
 		for(int i =0;i<=2;i++)
 		{
