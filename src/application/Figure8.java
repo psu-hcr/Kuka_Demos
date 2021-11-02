@@ -71,6 +71,7 @@ public class Figure8 extends RoboticsAPIApplication {
 		robot.move(ptpHome());
 		robot.move(ptp(.1,.1,-.1,.3,.1,.05,.2));
 		Frame TestPoint=new Frame(752.6,37.1,752.9,-1.6,-0.2,-1.5);
+		TestPoint.setRedundancyInformation(robot,Redundancy);
 	
 		for(int i =0;i<time;i++)
 		{
