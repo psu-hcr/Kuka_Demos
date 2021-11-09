@@ -64,3 +64,16 @@ The x,y,z position and A,B,C orientation can be pulled from the properties of th
 1. Go to File -> New -> Sunrise Application
 2. Select an application template
 3. Give a name to the new application
+
+### Creating smooth motion
+
+To make the Kuka robot move in a slow, continuous manner a motion batch needs to be used.
+The motion batch takes a list of motions and blends them into a single continuous motion.
+The following steps illistrate how to efficently create a motion batch.
+
+1. Start by createing a RobotMotion array. ex: RobotMotion<?>[] motionArray = new RobotMotion<?> [length];
+2. Create a for-loop that goes from 0 to length-1
+3. During each iteration of the for-loop create a new Frame object. ex: Frame frame = new Frame(x,y,z,a,b,c); where x, y, and z are the coordinates of the point the robot is to move to and a, b, and c are the angles of the end effector with respect to the x, y, and z axes respectively.
+4. Add the motion to the new Frame to the RobotMotion array. ex: motionArray[i]=ptp(frame).setBlendingCart(20).setJointVelocityRel(0.4); where setBlendingCart controls how smoothly the point is moved to and setJointVelocityRel controls the speed of the motion.
+5. Create a new Motion Batch using the RobotMotion array. ex: MotionBatch mb = new MotionBatch(motionArray);
+6. Finnaly, to move the robot use the moveAsync command. ex:robot.moveAsync(mb);
