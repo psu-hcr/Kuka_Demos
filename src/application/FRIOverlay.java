@@ -15,7 +15,6 @@ import com.kuka.roboticsAPI.motionModel.controlModeModel.JointImpedanceControlMo
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 import com.kuka.roboticsAPI.executionModel.CommandInvalidException;
 
-
 /**
  * Moves the LBR in a start position, creates an FRI-Session and executes a
  * PositionHold motion with FRI overlay. During this motion joint angles and

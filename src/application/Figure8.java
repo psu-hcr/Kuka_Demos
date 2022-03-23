@@ -1,7 +1,6 @@
 package application;
 
 
-
 import com.kuka.common.ThreadUtil;
 
 import com.kuka.motion.IMotion;
